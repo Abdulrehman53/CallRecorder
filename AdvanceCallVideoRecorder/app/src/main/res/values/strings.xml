@@ -1,3 +1,36 @@
 <resources>
-    <string name="app_name">AdvanceCallVideoRecorder</string>
+    <string name="app_name">Call Video Recorder</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="title_home">Inbox</string>
+    <string name="title_saved">Favourite</string>
+    <string name="title_trash">Trash</string>
+    <string name="title_setting">Setting</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_record_call">Record Call</string>
+    <string name="desc_record">Turn on Recording call</string>
+    <string name="txt_cloud">Cloud Account</string>
+    <string name="desc_cloud">Save your data in cloud account</string>
+    <string name="txt_storage">Storage</string>
+    <string name="desc_storage">storage settings</string>
+    <string name="txt_notification">Notification</string>
+    <string name="desc_notification">notification settings</string>
+    <string name="txt_security_lock">Security lock</string>
+    <string name="desc_lock">secuirity lock settings</string>
+    <string name="txt_video_recorder_pro">Video Recorder Pro</string>
+    <string name="desc_pro">Turn on Video Recording</string>
+    <string name="txt_share_application">Share Application</string>
+    <string name="desc_share_our_app">share our app</string>
+    <string name="txt_feedback">Feedback</string>
+    <string name="desc_feedback">reach us</string>
+    <string name="txt_rate_us">Rate us</string>
+    <string name="desc_rate_our_application">rate our application</string>
+    <string name="txt_app_version">App Version</string>
+    <string name="desc_version">1.0.2</string>
+
 </resources>
