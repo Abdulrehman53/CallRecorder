@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.PlayerActivity" />
-        <activity android:name=".activities.MoreActivity"></activity>
+        <activity android:name=".activities.MoreActivity" />
+        <activity android:name=".activities.NotificationActivity" />
+        <activity android:name=".activities.CloudActivity" />
+        <activity android:name=".activities.RecordingDetailActivity"></activity>
     </application>
 
 </manifest>

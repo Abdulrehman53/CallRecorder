@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.bilalzaman.advancecallvideorecorder.R;
 import com.bilalzaman.advancecallvideorecorder.activities.PlayerActivity;
+import com.bilalzaman.advancecallvideorecorder.activities.RecordingDetailActivity;
 import com.bilalzaman.advancecallvideorecorder.models.InboxModel;
 
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, PlayerActivity.class);
+                Intent intent = new Intent(context, RecordingDetailActivity.class);
                 intent.putExtra("position",  position);
                 context.startActivity(intent);
             }

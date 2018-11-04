@@ -8,9 +8,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import com.bilalzaman.advancecallvideorecorder.R;
+import com.bilalzaman.advancecallvideorecorder.activities.CloudActivity;
 import com.bilalzaman.advancecallvideorecorder.activities.MoreActivity;
+import com.bilalzaman.advancecallvideorecorder.activities.NotificationActivity;
 import com.bilalzaman.advancecallvideorecorder.helpers.UIHelper;
 
 /**
@@ -20,6 +25,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
 
     private ConstraintLayout recordLayout, notificationLayout, cloudLayout, moreLayout, proLayout, shareLayout, rateLayout;
     private Context context;
+    private Switch switchRecord;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -38,6 +44,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         proLayout = view.findViewById(R.id.pRO_layout);
         shareLayout = view.findViewById(R.id.share_layout);
         rateLayout = view.findViewById(R.id.rate_layout);
+        switchRecord = view.findViewById(R.id.switchRecord);
 
         recordLayout.setOnClickListener(this);
         notificationLayout.setOnClickListener(this);
@@ -46,37 +53,45 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         proLayout.setOnClickListener(this);
         shareLayout.setOnClickListener(this);
         rateLayout.setOnClickListener(this);
+
+        switchRecord.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Toast.makeText(context, "is on", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
         return view;
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.notification_layout:{
+        switch (v.getId()) {
+            case R.id.notification_layout: {
+                UIHelper.openActivity(getActivity(), NotificationActivity.class);
+                break;
+            }
+            case R.id.cloud_layout: {
+                UIHelper.openActivity(getActivity(), CloudActivity.class);
+                break;
+            }
+            case R.id.more_layout: {
+                UIHelper.openActivity(getActivity(), MoreActivity.class);
+                break;
+            }
+            case R.id.pRO_layout: {
 
                 break;
             }
-            case R.id.cloud_layout:{
+            case R.id.share_layout: {
 
                 break;
             }
-            case R.id.more_layout:{
-
-                UIHelper.openActivity(getActivity(),MoreActivity.class);
-                break;
-            }
-            case R.id.pRO_layout:{
-
-                break;
-            }case R.id.share_layout:{
+            case R.id.rate_layout: {
 
                 break;
             }
-            case R.id.rate_layout:{
-
-                break;
-            }
-
         }
     }
 }
