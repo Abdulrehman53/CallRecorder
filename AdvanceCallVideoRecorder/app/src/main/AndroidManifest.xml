@@ -19,8 +19,9 @@
         <activity android:name=".activities.PlayerActivity" />
         <activity android:name=".activities.MoreActivity" />
         <activity android:name=".activities.NotificationActivity" />
-        <activity android:name=".activities.CloudActivity" />
-        <activity android:name=".activities.RecordingDetailActivity"></activity>
+        <activity android:name=".activities.StorageActivity" />
+        <activity android:name=".activities.RecordingDetailActivity" />
+        <activity android:name=".activities.LockScreenActivity"></activity>
     </application>
 
 </manifest>

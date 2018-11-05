@@ -13,7 +13,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.bilalzaman.advancecallvideorecorder.R;
-import com.bilalzaman.advancecallvideorecorder.activities.CloudActivity;
+import com.bilalzaman.advancecallvideorecorder.activities.StorageActivity;
 import com.bilalzaman.advancecallvideorecorder.activities.MoreActivity;
 import com.bilalzaman.advancecallvideorecorder.activities.NotificationActivity;
 import com.bilalzaman.advancecallvideorecorder.helpers.UIHelper;
@@ -73,7 +73,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                 break;
             }
             case R.id.cloud_layout: {
-                UIHelper.openActivity(getActivity(), CloudActivity.class);
+                UIHelper.openActivity(getActivity(), StorageActivity.class);
                 break;
             }
             case R.id.more_layout: {
