@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.bilalzaman.advancecallvideorecorder.R;
 import com.bilalzaman.advancecallvideorecorder.adapters.InboxAdapter;
@@ -24,6 +26,8 @@ public class InboxFragment extends Fragment {
     private Context context;
     private RecyclerView recyclerView;
     private InboxAdapter inboxAdapter;
+    private TextView txtTitle;
+    private ImageButton imgBack;
     private ArrayList<InboxModel> data = new ArrayList<>();
 
     public InboxFragment() {
@@ -38,6 +42,12 @@ public class InboxFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_inbox, container, false);
         context = container.getContext();
+        txtTitle = view.findViewById(R.id.txtTitle);
+        imgBack = view.findViewById(R.id.imgBack);
+
+        txtTitle.setText("Inbox Recording");
+        txtTitle.setVisibility(View.VISIBLE);
+        imgBack.setVisibility(View.GONE);
         recyclerView = view.findViewById(R.id.recyclerView);
         inboxAdapter = new InboxAdapter(context, data);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bilalzaman.advancecallvideorecorder.R;
@@ -13,7 +14,8 @@ import com.bilalzaman.advancecallvideorecorder.R;
 public class StorageActivity extends AppCompatActivity {
 
     private ConstraintLayout inboxLayout, sizeLayout;
-    private TextView cancelBtn;
+    private TextView cancelBtn, txtTitle;
+    private ImageButton imgBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,18 @@ public class StorageActivity extends AppCompatActivity {
     }
 
     private void init() {
+        txtTitle = findViewById(R.id.txtTitle);
+        imgBack = findViewById(R.id.imgBack);
+
+        txtTitle.setText("Storage Settings");
+        txtTitle.setVisibility(View.VISIBLE);
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         inboxLayout = findViewById(R.id.inbox_layout);
         sizeLayout = findViewById(R.id.sizeSettingLayout);
         cancelBtn = findViewById(R.id.txtCancel);

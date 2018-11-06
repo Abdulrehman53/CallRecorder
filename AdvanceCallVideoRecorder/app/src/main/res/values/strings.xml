@@ -33,5 +33,6 @@
     <string name="txt_app_version">App Version</string>
     <string name="desc_version">1.0.2</string>
     <string name="more_settings">More Settings</string>
+    <string name="share_using">Share</string>
 
 </resources>

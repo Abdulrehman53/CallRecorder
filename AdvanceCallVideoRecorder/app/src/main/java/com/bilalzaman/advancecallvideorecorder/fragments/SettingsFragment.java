@@ -2,6 +2,7 @@ package com.bilalzaman.advancecallvideorecorder.fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
@@ -9,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bilalzaman.advancecallvideorecorder.R;
@@ -26,6 +29,8 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     private ConstraintLayout recordLayout, notificationLayout, cloudLayout, moreLayout, proLayout, shareLayout, rateLayout;
     private Context context;
     private Switch switchRecord;
+    private TextView txtTitle;
+    private ImageButton imgBack;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -37,6 +42,12 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         context = container.getContext();
+        txtTitle = view.findViewById(R.id.txtTitle);
+        imgBack = view.findViewById(R.id.imgBack);
+
+        txtTitle.setText("Setting");
+        txtTitle.setVisibility(View.VISIBLE);
+        imgBack.setVisibility(View.GONE);
         recordLayout = view.findViewById(R.id.recorder_layout);
         notificationLayout = view.findViewById(R.id.notification_layout);
         cloudLayout = view.findViewById(R.id.cloud_layout);
@@ -85,7 +96,12 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                 break;
             }
             case R.id.share_layout: {
-
+                Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Check our App on Playstore " +
+                        "google.com");
+                context.startActivity(Intent.createChooser(shareIntent, context.getResources().getString(R.string.share_using)));
                 break;
             }
             case R.id.rate_layout: {
