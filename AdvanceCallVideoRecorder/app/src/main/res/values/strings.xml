@@ -5,10 +5,10 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <string name="title_home">Inbox</string>
-    <string name="title_saved">Favourite</string>
-    <string name="title_trash">Trash</string>
-    <string name="title_setting">Setting</string>
+    <string name="title_home">INBOX</string>
+    <string name="title_saved">FAVOURITE</string>
+    <string name="title_trash">TRASH</string>
+    <string name="title_setting">SETTINGS</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
