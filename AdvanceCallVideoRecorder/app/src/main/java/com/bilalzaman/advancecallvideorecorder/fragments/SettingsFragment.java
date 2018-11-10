@@ -2,6 +2,7 @@ package com.bilalzaman.advancecallvideorecorder.fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -89,29 +90,34 @@ public class SettingsFragment extends Fragment {
 
     }
 
-    @OnClick(R.id.txtStorage)
+    @OnClick({R.id.txtStorage, R.id.storage_desc})
     void storage() {
         UIHelper.openActivity(getActivity(), StorageActivity.class);
     }
 
 
-    @OnClick(R.id.txtLock)
+    @OnClick({R.id.txtLock, R.id.lock_desc})
     void security() {
         UIHelper.openActivity(getActivity(), LockScreenActivity.class);
     }
 
 
-    @OnClick(R.id.txtPro)
+    @OnClick({R.id.txtPro,R.id.pro_desc})
     void videoPro() {
 
     }
 
-    @OnClick(R.id.txtShare)
+    @OnClick({R.id.txtShare,R.id.share_desc})
     void shareApplication() {
+        Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Download over app for recording your calls");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "google.com");
+        context.startActivity(Intent.createChooser(shareIntent, context.getResources().getString(R.string.share_using)));
 
     }
 
-    @OnClick(R.id.txtRate)
+    @OnClick({R.id.txtRate,R.id.rate_desc})
     void rate() {
 
     }

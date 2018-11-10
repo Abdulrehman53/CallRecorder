@@ -10,6 +10,9 @@ import android.widget.TextView;
 import com.bilalzaman.advancecallvideorecorder.R;
 import com.bilalzaman.advancecallvideorecorder.helpers.UIHelper;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class RecordingDetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ConstraintLayout playerLayout;
@@ -21,6 +24,7 @@ public class RecordingDetailActivity extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recording_detail);
+        ButterKnife.bind(this);
 
         init();
     }
@@ -51,4 +55,5 @@ public class RecordingDetailActivity extends AppCompatActivity implements View.O
             }
         }
     }
+
 }
