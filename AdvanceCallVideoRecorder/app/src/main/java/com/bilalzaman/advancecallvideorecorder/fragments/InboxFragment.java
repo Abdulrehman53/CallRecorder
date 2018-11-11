@@ -9,14 +9,23 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bilalzaman.advancecallvideorecorder.R;
 import com.bilalzaman.advancecallvideorecorder.adapters.InboxAdapter;
+import com.bilalzaman.advancecallvideorecorder.interfaces.RecyclerViewClickListener;
+import com.bilalzaman.advancecallvideorecorder.listeners.RecyclerViewTouchListener;
 import com.bilalzaman.advancecallvideorecorder.models.InboxModel;
 
 import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +38,7 @@ public class InboxFragment extends Fragment {
     private TextView txtTitle;
     private ImageButton imgBack;
     private ArrayList<InboxModel> data = new ArrayList<>();
+    Unbinder unbinder;
 
     public InboxFragment() {
         // Required empty public constructor
@@ -42,6 +52,7 @@ public class InboxFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_inbox, container, false);
         context = container.getContext();
+        unbinder = ButterKnife.bind(this,view);
         txtTitle = view.findViewById(R.id.txtTitle);
         imgBack = view.findViewById(R.id.imgBack);
 
@@ -54,7 +65,7 @@ public class InboxFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(inboxAdapter);
 
+
         return view;
     }
-
 }

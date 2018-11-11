@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
 
 import com.bilalzaman.advancecallvideorecorder.R;
 import com.bilalzaman.advancecallvideorecorder.activities.PlayerActivity;
@@ -53,6 +55,8 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
                 context.startActivity(intent);
             }
         });
+
+
     }
 
     @Override
@@ -60,13 +64,24 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
         return 1;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         private ConstraintLayout mainLayout;
+        private CheckBox checkDelete;
+
         public ViewHolder(View itemView) {
             super(itemView);
             mainLayout = itemView.findViewById(R.id.adapter_layout);
+            checkDelete = itemView.findViewById(R.id.check_delete);
 
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    int position = getLayoutPosition();
+                    checkDelete.setVisibility(View.VISIBLE);
+                    return false;
+                }
+            });
         }
     }
 }
