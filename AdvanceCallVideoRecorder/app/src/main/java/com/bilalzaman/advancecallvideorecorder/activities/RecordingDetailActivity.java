@@ -1,8 +1,8 @@
 package com.bilalzaman.advancecallvideorecorder.activities;
 
+import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -11,7 +11,6 @@ import com.bilalzaman.advancecallvideorecorder.R;
 import com.bilalzaman.advancecallvideorecorder.helpers.UIHelper;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class RecordingDetailActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -48,8 +47,8 @@ public class RecordingDetailActivity extends AppCompatActivity implements View.O
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.player_const:{
+        switch (v.getId()) {
+            case R.id.player_const: {
                 UIHelper.openActivity(this, PlayerActivity.class);
                 break;
             }

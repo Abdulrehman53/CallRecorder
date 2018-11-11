@@ -8,18 +8,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bilalzaman.advancecallvideorecorder.R;
-import com.bilalzaman.advancecallvideorecorder.models.FavouriteModel;
+import com.bilalzaman.advancecallvideorecorder.models.TrashModel;
 
 import java.util.ArrayList;
 
 /**
  * Created by BilalZaman on 11/11/2018.
  */
-public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.ViewHolder> {
-    private Context context;
-    private ArrayList<FavouriteModel> data = new ArrayList<>();
+public class TrashAdapter extends RecyclerView.Adapter<TrashAdapter.ViewHolder> {
 
-    public FavouriteAdapter(Context context, ArrayList<FavouriteModel> data) {
+    private Context context;
+    private ArrayList<TrashModel> data = new ArrayList<>();
+
+    public TrashAdapter(Context context, ArrayList<TrashModel> data) {
         this.context = context;
         this.data = data;
     }
@@ -27,7 +28,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_favourite, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_trash, parent, false);
         context = parent.getContext();
         return new ViewHolder(view);
     }
@@ -40,7 +41,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 5;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
